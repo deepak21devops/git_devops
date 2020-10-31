@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+    network_mode: "host"
+  node-app:
+    # depends_on:
+    #   - redis-server
+    build: .
+    ports:
+      - '4001:8081'
+    network_mode: "host"
+# networks:
+#   some-net:
+#     driver: bridge
